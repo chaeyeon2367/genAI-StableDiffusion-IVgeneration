@@ -37,10 +37,64 @@ The technique is versatile, allowing users to explore a wide range of creative p
 
 </br>   
 
-### Install Stable Diffusion Webui on Colab and Locally
+### 📌 Install Stable Diffusion Webui on Colab and Locally
 
+#### (1) Install stable-diffusion-webui on Mac
+  - hardware requirements
+    - Processor (CPU): Apple Silicon (M1 or M2) – Recommended CPUs include M1, M1 Pro, M1 Max, M2, M2 Pro, and M2 Max. Both efficient and performance cores are important.
+    - Memory (RAM): Ideally, your machine should have 16 GB of memory or more.
+    - Performance Comparison: Stable Diffusion runs slower on Mac. A similarly priced Windows PC with a dedicated GPU is expected to deliver images faster.
+  - system requirements
+    - You should have an Apple Silicon M1 or M2, with at least 8GB RAM. Your MacOS version should be at least 12.3. Click the Apple icon on the top left and click About this Mac. Update your MacOS before if necessary.   
 
-  - Stable Diffusion models(checkpoint)
+  - Install [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) on Mac
+
+    - Creating an Anaconda Virtual Environment
+      
+        `conda create --n YourEnvName`
+    
+        `conda activate YourEnvName`
+
+       A new folder stable-diffusion-webui should be created under your home directory.
+
+        `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui`
+      
+        `cd ~/stable-diffusion-webui;./webui.sh --no-half`
+
+       Open a web browser and click the following URL to start Stable Diffusion.
+
+        `http://127.0.0.1:7860/`
+
+#### (2) Install stable-diffusion-webui on Colab
+
+  - Version 1. [AUTOMATIC1111](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast_stable_diffusion_AUTOMATIC1111.ipynb)
+  - Version 2. [digiclau](https://colab.research.google.com/github/DigiClau/stablediffusion_webui/blob/main/StableDiffusionWebUI_digiclau.ipynb) korean ver.
+
+</br> 
+
+### 📌 Stable Diffusion models(checkpoint)
+
+The Stable Diffusion model, akin to the artist who draws in the space provided by the Stable Diffusion webui, is the entity responsible for creating images. In other words, choosing a model is comparable to selecting the artist who will be drawing. While techniques like LoRA, embedding, hypernetwork, and others are capable of generating images, the model or checkpoint serves as the artist; without it, there is no one to create the artwork. Therefore, having the right model (checkpoint) is essential for the generation of images in the Stable Diffusion framework.
+
+In the same way, choosing a model is akin to selecting the artist, and just as the style of an artwork varies depending on who is drawing, the images generated differ significantly based on the choice of the model. There are two main websites where you can download these models.
+
+  - Civitai : <https://civitai.com>
+
+  - Hugging face : <https://huggingface.co>
+
+</br> 
+
+#### Model files (.safetensors , .ckpt)
+
+The model files with the extensions .safetensors and .ckpt are related to the Stable Diffusion webui and represent different aspects of the model:
+
+   - safetensors : This file contains tensors (data structures representing multi-dimensional arrays) related to the model.
+It may include information about the model's architecture, parameters, and other essential components.
+The ".safetensors" extension suggests that the data stored in this file is considered safe or stable for the model's functioning.
+
+   - 'ckpt' : This file typically represents a checkpoint file and contains the saved weights and biases of the model.
+It allows the model to be saved and restored at a later time, enabling users to continue training or deploy the model without starting from scratch.
+The ".ckpt" extension is a common convention in machine learning to denote checkpoint files.
 
 
 ## 2. Text to Image (t2i)
