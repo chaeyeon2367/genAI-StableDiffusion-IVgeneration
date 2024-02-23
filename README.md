@@ -13,8 +13,8 @@ This repository showcases the results of an AI image and video generation projec
 ## 🏷 Table of Contents
 
 1. [Stable Diffusion Introduction and WebUI Installation](#1-stable-diffusion-introduction-and-webui-installation)
-2. [Text to Image (txt2img)](#2-text-to-image)
-3. [Image to Image (img2img)](#3-image-to-image)
+2. [Text to Image](#2-Text-to-Image) 
+3. [Image to Image](#3-Image-to-Image)
 4. [How to Write Prompts](#4-How-to-Write-Prompts)
 5. [ControlNet Variants](#5-controlnet-variants)
 6. [Dreambooth,LoRA Models Training](#6-Dreambooth-LoRA-Models-Training)
@@ -110,11 +110,11 @@ The ".ckpt" extension is a common convention in machine learning to denote check
 
 </br> 
 
-## 2. Text to Image (txt2img)
+## 2. Text to Image
 
 </br>
 
-#### 🖥  Generated images using text-to-image in the webui
+### 🖥  Generated images using text-to-image in the webui
 
 </br>
 
@@ -137,7 +137,7 @@ The ".ckpt" extension is a common convention in machine learning to denote check
 
 
 
-#### 📎 Images of cosmetic models generated with txt2img
+### 📎 Images of cosmetic models generated with txt2img
 
 Using Stable Diffusion for generating cosmetic model images through txt2img is an innovative and practical approach. It reflects the potential of AI-generated images for advertising and marketing purposes without relying on actual models. 
 
@@ -161,9 +161,59 @@ pale skin, (realistic glistening skin:1.2), skindentation, masterpiece, (proport
 
 Negative prompt: 7dirtywords, easynegative, (nudity:1.3), nsfw, (worst quality:2.0), bad-artist, bad-hands-5
 ```
-    
-## 3. Image to Image (img2img)
-  - Results of Image to Image generation
+
+</br>
+
+
+## 3. Image to Image
+
+In Stable Diffusion, Img2img allows the generation of new images from existing ones. This concept is highly versatile, enabling the creation of images in various styles. Whether transforming realistic images into animated styles or generating images in different artistic expressions, Img2img provides a powerful tool for diverse and creative image synthesis. This feature is particularly advantageous for artists, designers, and content creators seeking flexibility and creative freedom in their image generation process.
+
+</br>
+
+### 📍 Image to Image generation
+
+  I used the realisticVisionV60B1, revAnimized models for the generation of various styles of images.
+
+  
+</br>
+
+- **Realistic image to animated image**
+
+  ![Collage-5](https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/c3b04c72-cd16-4015-b441-ffe8aa043f9a)
+
+</br>
+
+- **Animated image to realistic image**
+
+
+  ![Collage-6](https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/b1c7c07a-b649-4271-9add-e01d932501ed)
+
+</br>
+
+### 🎨 Utilize the Inpaint feature
+
+</br>
+
+- **Results with the Inpaint feature applied**
+<img width="760" alt="Screenshot 2024-02-23 at 22 59 39" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/d3034705-ece9-4586-8e1f-1adc9fe16919">
+
+
+</br>
+</br>
+
+In Stable Diffusion WebUI, the Inpaint feature is a powerful tool that allows the transformation of images using the Img2img model. Specifically, it can be employed to seamlessly replace or fill in missing parts of an image, enhancing its visual appeal. This functionality becomes particularly useful in scenarios where image editing or manipulation is required, such as removing unwanted objects, correcting imperfections, or, as in this case, turning a striped shirt into a cat wearing a striped T-shirt.
+
+</br>
+
+
+- **Results with the Inpaint feature applied**
+
+  
+   ![Collage-4](https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/db0027e1-6036-49ae-a7cb-d0e18559aea7)
+
+</br>
+
 
 ## 4. How to Write Prompts
     
