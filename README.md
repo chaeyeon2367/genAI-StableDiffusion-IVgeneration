@@ -13,8 +13,8 @@ This repository showcases the results of an AI image and video generation projec
 ## 🏷 Table of Contents
 
 1. [Stable Diffusion Introduction and WebUI Installation](#1-stable-diffusion-introduction-and-webui-installation)
-2. [Text to Image (t2i)](#2-text-to-image)
-3. [Image to Image (i2i)](#3-image-to-image)
+2. [Text to Image (txt2img)](#2-text-to-image)
+3. [Image to Image (img2img)](#3-image-to-image)
 4. [How to Write Prompts](#4-How-to-Write-Prompts)
 5. [ControlNet Variants](#5-controlnet-variants)
 6. [Dreambooth,LoRA Models Training](#6-Dreambooth-LoRA-Models-Training)
@@ -37,7 +37,10 @@ The technique is versatile, allowing users to explore a wide range of creative p
 
 </br>   
 
-### 📌 Install Stable Diffusion Webui on Colab and Locally
+### 💾 Install Stable Diffusion Webui on Colab and Locally
+</br> 
+
+<img width="720" alt="Screenshot 2024-02-23 at 19 50 13" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/7b60a464-550e-4d94-9115-bdf96f4e0b68">
 
 #### (1) Install stable-diffusion-webui on Mac
   - hardware requirements
@@ -60,10 +63,18 @@ The technique is versatile, allowing users to explore a wide range of creative p
         `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui`
       
         `cd ~/stable-diffusion-webui;./webui.sh --no-half`
+      
+      
+      <img width="512" alt="Screenshot 2024-02-23 at 13 51 26" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/3f8be52e-60aa-453d-93cb-876a3c425678">
+      
+      
+      Open a web browser and click the following URL to start Stable Diffusion.
 
-       Open a web browser and click the following URL to start Stable Diffusion.
+      `http://127.0.0.1:7860/`
 
-        `http://127.0.0.1:7860/`
+ 
+      
+      
 
 #### (2) Install stable-diffusion-webui on Colab
 
@@ -72,7 +83,8 @@ The technique is versatile, allowing users to explore a wide range of creative p
 
 </br> 
 
-### 📌 Stable Diffusion models(checkpoint)
+
+### 🤖 Stable Diffusion models(checkpoint)
 
 The Stable Diffusion model, akin to the artist who draws in the space provided by the Stable Diffusion webui, is the entity responsible for creating images. In other words, choosing a model is comparable to selecting the artist who will be drawing. While techniques like LoRA, embedding, hypernetwork, and others are capable of generating images, the model or checkpoint serves as the artist; without it, there is no one to create the artwork. Therefore, having the right model (checkpoint) is essential for the generation of images in the Stable Diffusion framework.
 
@@ -84,7 +96,7 @@ In the same way, choosing a model is akin to selecting the artist, and just as t
 
 </br> 
 
-#### Model files (.safetensors , .ckpt)
+#### 📂 Checkpoint(model) files (.safetensors , .ckpt)
 
 The model files with the extensions .safetensors and .ckpt are related to the Stable Diffusion webui and represent different aspects of the model:
 
@@ -96,12 +108,61 @@ The ".safetensors" extension suggests that the data stored in this file is consi
 It allows the model to be saved and restored at a later time, enabling users to continue training or deploy the model without starting from scratch.
 The ".ckpt" extension is a common convention in machine learning to denote checkpoint files.
 
+</br> 
 
-## 2. Text to Image (t2i)
-  - Results of Text to Image generation
+## 2. Text to Image (txt2img)
 
+</br>
+
+#### 🖥  Generated images using text-to-image in the webui
+
+</br>
+
+<img width="720" alt="Screenshot 2024-02-23 at 21 06 20" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/fae3e798-2e16-4a2f-8ac0-0204b72e2dda">
+
+</br>
+
+
+
+  - **Parameters**
     
-## 3. Image to Image (i2i)
+    - **Sampling Steps** : the number of steps or iterations during the sampling process. A higher value may result in more detailed and refined images but will require more computational resources.
+    - **Sampling Method** : Refers to the technique used for sampling during image generation. Different methods can influence the diversity and quality of generated images. 
+    - **CFG Scale** : Stands for "config scale." It represents a scaling factor for the configuration settings, influencing the overall size and structure of the generated images.
+    - **Batch Size** : The number of samples processed in one iteration. A larger batch size can speed up training but requires more memory.
+    - **Size (Width, Height)** : Defines the dimensions of the generated images. Specified as width and height, this setting determines the resolution and aspect ratio of the output images.
+    - **Seed** : A seed is an initial value used to start the randomization process. Setting a seed allows for reproducibility, ensuring that running the model with the same seed produces the same results.                          
+
+</br>
+
+
+
+#### 📎 Images of cosmetic models generated with txt2img
+
+Using Stable Diffusion for generating cosmetic model images through txt2img is an innovative and practical approach. It reflects the potential of AI-generated images for advertising and marketing purposes without relying on actual models. 
+
+</br>
+
+![Collage](https://github.com/chaeyeon2367/genAI-StableDiffusion-VIgeneration/assets/63314860/f9dbff8a-d12d-4649-9ff8-72ff512b1919)
+
+  - Sampling Steps: 30
+  - Sampling method: DPM++ 2M Karras
+  - CFG scale: 4
+  - Size: 512x720
+  - Model: Realistic_Vision_V5.1_fp16-no-ema
+  - VAE: vae-ft-ema-560000-ema-pruned.ckpt
+
+```
+Prompt : (realistic, photo-realistic:1.37), professional lighting, photon mapping, radiosity, 1girl, smile,
+(holding a perfume:1.3),perfume, (medium shot), (looking at viewer:1), high quality, highres, 8k, accurate color reproduction,
+realistic texture,((simple background, white background)), ((wearing turtleneck sweater)), (extra deatailed), (best quality), 1girl,
+((extra deatailed body:1.3)), (realistic), narrow waist, (straight hair, medium-length hair, black hair, partedhairs:1.45), breasts,
+pale skin, (realistic glistening skin:1.2), skindentation, masterpiece, (proportional eyes, same size eyes),  <lora:jwy___v1:1>
+
+Negative prompt: 7dirtywords, easynegative, (nudity:1.3), nsfw, (worst quality:2.0), bad-artist, bad-hands-5
+```
+    
+## 3. Image to Image (img2img)
   - Results of Image to Image generation
 
 ## 4. How to Write Prompts
