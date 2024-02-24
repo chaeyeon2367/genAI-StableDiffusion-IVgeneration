@@ -154,10 +154,12 @@ Using Stable Diffusion for generating cosmetic model images through txt2img is a
 
 ```
 Prompt : (realistic, photo-realistic:1.37), professional lighting, photon mapping, radiosity, 1girl, smile,
-(holding a perfume:1.3),perfume, (medium shot), (looking at viewer:1), high quality, highres, 8k, accurate color reproduction,
-realistic texture,((simple background, white background)), ((wearing turtleneck sweater)), (extra deatailed), (best quality), 1girl,
-((extra deatailed body:1.3)), (realistic), narrow waist, (straight hair, medium-length hair, black hair, partedhairs:1.45), breasts,
-pale skin, (realistic glistening skin:1.2), skindentation, masterpiece, (proportional eyes, same size eyes),  <lora:jwy___v1:1>
+(holding a perfume:1.3),perfume, (medium shot), (looking at viewer:1), high quality, highres,
+8k, accurate color reproduction, realistic texture,((simple background, white background)),
+((wearing turtleneck sweater)), (extra deatailed), (best quality), 1girl, ((extra deatailed body:1.3)),
+(realistic), narrow waist, (straight hair, medium-length hair, black hair, partedhairs:1.45), breasts,
+pale skin, (realistic glistening skin:1.2), skindentation, masterpiece, (proportional eyes, same size eyes),
+<lora:jwy___v1:1>
 
 Negative prompt: 7dirtywords, easynegative, (nudity:1.3), nsfw, (worst quality:2.0), bad-artist, bad-hands-5
 ```
@@ -216,7 +218,65 @@ In Stable Diffusion WebUI, the Inpaint feature is a powerful tool that allows th
 
 
 ## 4. How to Write Prompts
-    
+
+A prompt is a concise and specific input provided to a generative model to guide its content creation. It typically consists of a brief textual description or set of instructions that influences the output of the model. In the context of Stable Diffusion webui, prompts are used to shape the characteristics, style, or subject matter of the generated images or videos. 
+
+</br>
+
+### (1) Prompt / Negative prompt
+
+Stable Diffusion webui has two input fields for prompts. The first is called the positive prompt, and the second is called the negative prompt. In the positive prompt, you include the content you want reflected in the generated images, while in the negative prompt, you include the content you prefer not to be reflected. However, it's important to note that not everything included in the prompts will be entirely reflected or excluded based on positive or negative prompts.
+
+</br>
+
+### (2) Token
+
+A token, in simple terms, can be thought of as a unit of text, often corresponding to a single character or word. In the context of prompt writing, the number of tokens refers to the count of these text units. The prompt input field in the upper right corner of the Stable Diffusion webui displays the token count. It's recommended to keep prompts within 75 tokens, as the interpretation process divides the text into segments of 75 tokens each. This limitation ensures effective processing and interpretation of the input prompt.
+
+</br>
+
+### (3) Weight
+
+Weight, in simple terms, refers to the influence or impact of a prompt. A prompt without a specified weight is assigned a default weight of 1. You can increase the influence of a prompt by assigning a weight, and there are two ways to do so:
+
+  - **Enclose in Parentheses** : You can enclose the prompt in parentheses to give it additional weight. For example:(best quality)
+
+  - **Colon Notation** : Alternatively, you can use colon notation to explicitly specify the weight. For example: (best quality:1.5)
+
+In this case, a prompt with a weight has a greater impact compared to a prompt without any weight. However, it's essential not to set excessively high weights for a single prompt, as it may negatively affect the generated image. It is generally recommended to set weights within the range of 0.8 to 1.5 to maintain a balance and avoid potential image degradation.
+
+</br>
+
+### (4) Sentence Type / Tag Type Prompts
+
+  - **Sentence Type Prompts** : Sentence type prompts are structured phrases or sentences that provide detailed descriptions in a sentence or clause format. They are ideal for expressing elements like composition, scenario, or actions. Examples include prompts describing appearance, state, background, etc.
+    - Example of Sentence Type Prompt: (standing on the table),(looking at window)
+
+  - **Tag Type Prompts** : Tag type prompts consist of single-word prompts that act as concise tags representing specific attributes such as appearance, state, or background. They are more focused and efficient for conveying certain aspects of the desired image.
+    - Example of Tag Type Prompt: (black_hair),(white_background)
+  
+</br>
+
+### (5) Frequently Used Prompts
+
+  - **Prompts**
+```
+ high quality, 8k, best quality, accurate color reproduction, masterpiece, proportional eyes, same size eyes,
+ detailed body,radiosity, realistic, photo-realistic, sharp details, vibrant colors, crystal clear,
+ stunning clarity, vivid texture, lifelike rendering, optimal lighting, fine details, rich shadows 
+```
+
+  - **Negative Prompts**
+```
+  7dirtywords, easynegative, worst quality, low quality, extra fingers, fewer fingers,missing fingers,
+  extra arms, inaccurate eyes, ugly, deformed, noisy, blurry,low contrast, distorted proportions,
+  unrealistic colors, pixelated, dull appearance, unnatural lighting,jagged edges, inconsistent shadows
+```
+
+</br>
+
+
+
 ## 5. ControlNet Variants
 
   - Different types of ControlNet models and their applications
@@ -230,9 +290,38 @@ In Stable Diffusion WebUI, the Inpaint feature is a powerful tool that allows th
 
   - Using Deforum for generating AI videos
     
+</br>
+ 
+![superman 2](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/3f1bf157-bbc6-4dc9-a6d9-e5f93b71c2ae)
+
+</br>
+
+ - **Prompts**
+   
+```
+  "0": "Superman soaring through the sky, descending to rescue a person, vibrant colors in the background
+with clouds and sunlight, Digital illustration, good quality, realistic",
+  "60": "Superman descending in an urban environment at night, city lights below creating a dramatic atmosphere,
+a mix of tension and relief in the atmosphere, realistic, good quality",
+  "120": " Superman descending in a futuristic cityscape, surrounded by holographic displays and advanced technology,
+neon lights and advanced architecture, realistic, good quality",
+  "180": "Superman descending in a natural setting with a serene landscape, mountains and clear blue sky,
+stable diffusion capturing the peaceful yet powerful moment, realistic, good quality, 8k",
+  "220":"Superman swooping down towards a person in a chaotic battlefield, smoke and debris in the background,
+realistic, good quality, 8k"
+```
+    
+    
 ## 8. Animating Real-human Videos with Move to Move
 
   - Transforming real human videos into animated sequences
+
+</br>
+
+![1708577651](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/2a185687-ad20-4d08-98b0-d1ebfae41c53)
+
+</br>
+
 
 ## 9. Video Generation with Animatediff
 
