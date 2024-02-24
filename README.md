@@ -286,13 +286,50 @@ In this case, a prompt with a weight has a greater impact compared to a prompt w
   - Dreambooth,LoRA Model Training and results 
   - Differences between Dreambooth and LoRA models
 
+
+
+</br>
+
 ## 7. Video Generation with Deforum
 
-  - Using Deforum for generating AI videos
+</br>
+Deforum is an open-source animation tool that leverages Stable Diffusion's image-to-image function to produce dynamic video content. The process involves generating a sequence of images and then stitching them together to create a coherent video.
+
+The animation is achieved by applying slight transformations to each frame. The image-to-image function is utilized to generate subsequent frames, ensuring that the transitions between frames are minimal. This approach creates the illusion of smooth continuity, resulting in a visually pleasing and fluid video.
+
+</br>
+
+- **Parameters**
+
+    - **Translation (x, y, z)** : Translation represents the movement of the image in three-dimensional space. Translation x,y,z denotes movement along the x,y,z-axis.
+
+    - **Rotation (3d x, y, z)** : Rotation deals with the orientation or rotation of the image in three-dimensional space. Rotation 3d x,y,z represents rotation around the x,y,z-axis.
+
+    - **Noise Schedule** : The noise schedule refers to a predefined plan or sequence for introducing noise during the generation process. It helps control the randomness or variability in the generated images or video frames. Adjusting the noise schedule can influence the level of detail, texture, or unpredictability in the final output.
+
+
+  You can find more detailed parameter settings on this website : <https://stable-diffusion-art.com/deforum/>
+
+</br>
+
+
+- **Superman video generated with Deforum**
     
 </br>
  
 ![superman 2](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/3f1bf157-bbc6-4dc9-a6d9-e5f93b71c2ae)
+
+</br>
+
+
+- **Parameters**
+
+  - Translation x: 0: (0), 30:(15), 210:(15), 300:(0)
+  - Translation z: 0: (0.2), 60:(10), 300:(15)
+  - Rotation 3d x: 0: (0), 60:(0), 90:(0.5), 179:(0), 180:(150), 300:(0.5)
+  - Rotation 3d y: 0: (0), 30:(-3.5), 90:(0.5), 180:(-2.8), 300:(-2), 420:(0)
+  - Rotation 3d z: 0: (0), 60:(0.2), 90:(0), 180:(-0.5), 300:(0), 420:(0.5), 500:(0.8)
+  - Noise schedule: 0: (-0.06*(cos(3.141*t/15)**100)+0.06)
 
 </br>
 
@@ -310,7 +347,9 @@ stable diffusion capturing the peaceful yet powerful moment, realistic, good qua
   "220":"Superman swooping down towards a person in a chaotic battlefield, smoke and debris in the background,
 realistic, good quality, 8k"
 ```
-    
+
+</br>
+
     
 ## 8. Animating Real-human Videos with Move to Move
 
@@ -334,14 +373,4 @@ realistic, good quality, 8k"
 
 
 
-
-
-
-
-Follow the steps below to set up the project locally:
-
-```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
-# Add instructions for any specific setup steps if necessary
 
