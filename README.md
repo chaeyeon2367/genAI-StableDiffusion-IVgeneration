@@ -320,7 +320,7 @@ The structure involves a two-step fine-tuning process using approximately 3-5 im
 
 </br>
 
-### 📎 Dreambooth Model "kami_v02" Training Results
+### 📌 Dreambooth Model "kami_v02" Training Results
 
 </br>
 
@@ -337,6 +337,13 @@ I fine-tuned the Dreambooth model using 20 pictures of our dog, Kami on [Colab](
     - Text_encoder_learning_rate : 1e-6
     - Resolution : 512
 
+### LoRA model
+
+</br>
+
+<img width="673" alt="Screenshot 2024-02-25 at 17 02 01" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/fd999e93-2136-464c-9da2-3fc8c1c58c07">
+
+</br>
 
 ### 📌 Differences between Dreambooth and LoRA models
 
@@ -373,8 +380,6 @@ The animation is achieved by applying slight transformations to each frame. The 
 </br>
  
 ![superman 2](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/3f1bf157-bbc6-4dc9-a6d9-e5f93b71c2ae)
-
-</br>
 
 
 - **Parameters**
