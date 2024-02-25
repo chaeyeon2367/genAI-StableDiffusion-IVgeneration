@@ -1,4 +1,5 @@
 
+
 </br>
 
 # 🌈AI Image and Video Generation Project with Stable Diffusion
@@ -283,10 +284,64 @@ In this case, a prompt with a weight has a greater impact compared to a prompt w
     
 ## 6. Dreambooth,LoRA Models Training
 
-  - Dreambooth,LoRA Model Training and results 
-  - Differences between Dreambooth and LoRA models
+### Dreambooth model 
+
+  - A method of adding new concepts to an already trained model
+  - Fine-tunes the weights of the entire model
+  - Creates a new checkpoint (weight) as the entire model is modified
+  - Occupies a significant amount of disk space, approximately 1-7GB
+  - High fidelity to visual features of the subject, preserving existing model knowledge even with fine-tuning using just a few images.
+    
+
+</br>
+
+<img width="860" alt="high_level" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/c1d35334-46e0-452f-b086-d51bd99845a4">
 
 
+</br>
+The Dreambooth model operates by taking a small set of input images, usually 3-5, depicting a specific subject, along with the corresponding class name (e.g., "dog"). It then produces a fine-tuned or personalized text-to-image model. This model encodes a distinctive identifier specific to the subject. During the inference stage, this unique identifier can be embedded in various sentences to generate synthesized images of the subject in different contexts.
+
+
+</br>
+
+
+<img width="860" alt="system" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/4d93ab18-f806-477f-ba64-91d98c6af6e9">
+
+
+</br>
+
+The structure involves a two-step fine-tuning process using approximately 3-5 images of a subject:
+
+(a) The initial step fine-tunes a low-resolution text-to-image model using input images paired with a text prompt containing a unique identifier and the class name of the subject (e.g., "A photo of a [T] dog"). Simultaneously, a class-specific prior preservation loss is applied. This loss leverages the model's semantic understanding of the class, encouraging the generation of diverse instances belonging to the subject's class by injecting the class name into the text prompt (e.g., "A photo of a dog").
+
+(b) The subsequent step fine-tunes the super resolution components using pairs of low-resolution and high-resolution images derived from the input image set. This process enables the model to maintain high-fidelity to small details of the subject.
+
+🔗 Source : https://dreambooth.github.io
+
+</br>
+
+### 📎 Dreambooth Model "kami_v02" Training Results
+
+</br>
+
+  ![Collage-7](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/3639a227-54bf-4b42-aa11-4f6af3079794)
+
+I fine-tuned the Dreambooth model using 20 pictures of our dog, Kami on [Colab](https://colab.research.google.com/drive/1q7UDM2ZM8_RDEH8yfmPeIoXoIkrQjinV). The pre-trained model used for fine-tuning was [realisticVisionV60B1](https://civitai.com/models/4201/realistic-vision-v60-b1). 
+
+ - **Parameters**
+
+    - Crop size : 512
+    - Unet_training_steps : 3300
+    - Unet_learning_rate : 2e-6
+    - Text_encoder_training_steps : 350
+    - Text_encoder_learning_rate : 1e-6
+    - Resolution : 512
+
+
+### 📌 Differences between Dreambooth and LoRA models
+
+
+  <img width="593" alt="Screenshot 2024-02-25 at 15 50 21" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/8d942bca-c39d-4006-9585-935b76725377">
 
 </br>
 
