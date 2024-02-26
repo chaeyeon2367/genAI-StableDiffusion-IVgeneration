@@ -20,7 +20,7 @@ This repository showcases the results of an AI image and video generation projec
 5. [ControlNet Variants](#5-controlnet-variants)
 6. [Dreambooth LoRA Models Training](#6-Dreambooth-LoRA-Models-Training)
 7. [Video Generation with Deforum](#7-video-generation-with-deforum)
-8. [Animating Real-Person Videos with Move to Move](#8-animating-real-human-videos-with-move-to-move)
+8. [Animating Real Person Videos with Move to Move](#8-Animating-Real-Person-Videos-with-Move-to-Move)
 9. [Video Generation with Animatediff](#9-video-generation-with-animatediff)
 10. [Conclusion](#10-Conclusion)
 
@@ -558,7 +558,7 @@ realistic, good quality, 8k"
 </br>
 
     
-## Animating Real-Person Videos with Move to Move
+## Animating Real Person Videos with Move to Move
 
 </br>
 
