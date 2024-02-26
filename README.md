@@ -18,7 +18,7 @@ This repository showcases the results of an AI image and video generation projec
 3. [Image to Image](#3-Image-to-Image)
 4. [How to Write Prompts](#4-How-to-Write-Prompts)
 5. [ControlNet Variants](#5-controlnet-variants)
-6. [Dreambooth , LoRA Models Training](#6-Dreambooth-,-LoRA-Models-Training)
+6. [Dreambooth LoRA Models Training](#6-Dreambooth-LoRA-Models-Training)
 7. [Video Generation with Deforum](#7-video-generation-with-deforum)
 8. [Animating Real-Person Videos with Move to Move](#8-animating-real-human-videos-with-move-to-move)
 9. [Video Generation with Animatediff](#9-video-generation-with-animatediff)
@@ -284,7 +284,7 @@ In this case, a prompt with a weight has a greater impact compared to a prompt w
 
 </br>
 
-## 6. Dreambooth , LoRA Models Training
+## 6. Dreambooth LoRA Models Training
 
 ### 🔎 Dreambooth model 
 
