@@ -22,7 +22,7 @@ This repository showcases the results of an AI image and video generation projec
 7. [Video Generation with Deforum](#7-video-generation-with-deforum)
 8. [Animating Real-Person Videos with Move to Move](#8-animating-real-human-videos-with-move-to-move)
 9. [Video Generation with Animatediff](#9-video-generation-with-animatediff)
-10.[Conclusion](#10-Conclusion)
+10. [Conclusion](#10-Conclusion)
 
 </br> 
 
