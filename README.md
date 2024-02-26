@@ -281,10 +281,12 @@ In this case, a prompt with a weight has a greater impact compared to a prompt w
 ## 5. ControlNet Variants
 
   - Different types of ControlNet models and their applications
-    
+
+</br>
+
 ## 6. Dreambooth,LoRA Models Training
 
-### Dreambooth model 
+### 🔎 Dreambooth model 
 
   - A method of adding new concepts to an already trained model
   - Fine-tunes the weights of the entire model
@@ -292,13 +294,15 @@ In this case, a prompt with a weight has a greater impact compared to a prompt w
   - Occupies a significant amount of disk space, approximately 1-7GB
   - High fidelity to visual features of the subject, preserving existing model knowledge even with fine-tuning using just a few images.
     
-
+</br>
 </br>
 
 <img width="860" alt="high_level" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/c1d35334-46e0-452f-b086-d51bd99845a4">
 
 
 </br>
+</br>
+
 The Dreambooth model operates by taking a small set of input images, usually 3-5, depicting a specific subject, along with the corresponding class name (e.g., "dog"). It then produces a fine-tuned or personalized text-to-image model. This model encodes a distinctive identifier specific to the subject. During the inference stage, this unique identifier can be embedded in various sentences to generate synthesized images of the subject in different contexts.
 
 
@@ -309,6 +313,8 @@ The Dreambooth model operates by taking a small set of input images, usually 3-5
 
 
 </br>
+</br>
+
 
 The structure involves a two-step fine-tuning process using approximately 3-5 images of a subject:
 
@@ -320,7 +326,7 @@ The structure involves a two-step fine-tuning process using approximately 3-5 im
 
 </br>
 
-### 📌 Dreambooth Model "kami_v02" Training Results
+### 💡 Dreambooth Model "kami_v02" Training Results
 
 </br>
 
@@ -337,19 +343,75 @@ I fine-tuned the Dreambooth model using 20 pictures of our dog, Kami on [Colab](
     - Text_encoder_learning_rate : 1e-6
     - Resolution : 512
 
-### LoRA model
+</br>
+
+### 🔎 LoRA model
 
 </br>
 
+  - LoRA introduces subtle changes to the most critical part of the Stable Diffusion model, the cross-attention layer. The cross-attention layer is the point where images and prompts intersect, and even small changes can have significant effects.
+  - The modified parts are saved in a separate file and used in conjunction with the ckpt (base model) file.
+  - The file size ranges from 2 to 200 MB, relatively smaller compared to the Dreambooth model, and it exhibits decent learning capabilities.
+  - The reason behind the smaller file size of the LoRA model, even while storing the same number of weights, lies in its approach of decomposing large matrices into two smaller submatrices with low-rank. In other words, LoRA can store significantly fewer numbers by decomposing matrices into two low-rank matrices.
+
+</br>
+    
 <img width="673" alt="Screenshot 2024-02-25 at 17 02 01" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/fd999e93-2136-464c-9da2-3fc8c1c58c07">
 
 </br>
+</br>
+
+The weights of the cross-attention layer are stored in a matrix. Essentially, a matrix is just an arrangement of numbers organized in rows and columns, similar to an Excel spreadsheet. The LoRA model fine-tunes itself by adding weights to this matrix.
+
+</br>
+
+  - **Weighted Sum**
+
+</br>
+
+<img width="642" alt="Screenshot 2024-02-26 at 15 07 06" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/587069cf-56d7-44a2-bb3a-44983583ad6b">
+
+</br>
+</br>
+
+Let's assume a model has a matrix composed of 1000 rows and 2000 columns. In this case, the model file would store 2 million (1000x2000) numbers. LoRA, however, splits this matrix into a 1000x2 matrix and a 2x2000 matrix. This results in only 6000 numbers in total (1000x2 + 2x2000), reducing the size to 1/333 compared to the original matrix. That's why the LoRA file is much smaller.
+
+In this example, the rank of the matrix stored in LoRA is 2, significantly smaller than the original matrix's rank of 2000. This type of reduced-dimension matrix is called a low-rank matrix. However, researchers suggest that reducing the size of the matrix in the cross-attention layer doesn't significantly impact fine-tuning performance. Fortunately, this approach works well.
+
+
+🔗 Source : [Thesis](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf) , https://www.internetmap.kr/entry/How-to-LoRA-Model 
+
+</br>
+
+### 💡 LoRA Model "pkpk" Training Results
+
+</br>
+
+![Collage-9](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/e165c8ae-84db-4d72-b840-9f38db67ca4d)
+
+</br>
+
+I fine-tuned the LoRA model using 20 pictures of Pikachu on [Colab](https://colab.research.google.com/github/Linaqruf/kohya-trainer/blob/main/kohya-LoRA-dreambooth.ipynb). The pre-trained model used for fine-tuning was [Chillout-Mix](https://civitai.com/models/6424/chilloutmix).
+
+
+
+ - **Parameters**
+
+    - **Data annotation** : BLIP Captioning (batch size 8, max_data_loader_n_workers 2)
+    - **Datasets** : resolution = 512, min_bucket_reso = 256, max_bucket_reso = 1024, caption_dropout_rate = 0, caption_tag_dropout_rate = 0, caption_dropout_every_n_epochs = 0, flip_aug = false , color_aug = false
+    - **Optimizer_argument** : optimizer_type = "AdamW", learning_rate = 0.0001, max_grad_norm = 1.0, lr_scheduler = "constant", lr_warmup_steps = 0
+    - **Training_arguments** : save_precision = "fp16", save_every_n_epochs = 5, train_batch_size = 3, max_token_length = 225, mem_eff_attn = false, xformers = true, max_train_epochs = 25, max_data_loader_n_workers = 8, persistent_data_loader_workers = true, gradient_checkpointing = false, gradient_accumulation_steps = 1, mixed_precision = "fp16", clip_skip = 2
+
+</br>
+
+
 
 ### 📌 Differences between Dreambooth and LoRA models
 
 
   <img width="593" alt="Screenshot 2024-02-25 at 15 50 21" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/8d942bca-c39d-4006-9585-935b76725377">
 
+</br>
 </br>
 
 ## 7. Video Generation with Deforum
