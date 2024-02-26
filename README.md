@@ -300,7 +300,7 @@ The integration of ControlNet with large diffusion models, exemplified by Stable
 </br>
 
 
-### Different types of ControlNet models
+### 📌 Different types of ControlNet models
 
 </br>
 
@@ -557,15 +557,59 @@ realistic, good quality, 8k"
 </br>
 
     
-## 8. Animating Real-human Videos with Move to Move
-
-  - Transforming real human videos into animated sequences
+## Animating Real-Person Videos with Move to Move
 
 </br>
 
-![1708577651](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/2a185687-ad20-4d08-98b0-d1ebfae41c53)
+Video-to-video tasks are typically labor-intensive and time-consuming, demanding significant manual effort to achieve desired results. The Mov2mov extension, integrated into Stable Diffusion, revolutionizes this workflow by introducing automation to streamline and simplify the entire process. This extension significantly reduces the need for manual intervention, making video-to-video tasks more efficient and accessible to users.
 
 </br>
+
+### ⚙ Enter mov2mov settings
+
+ - Step1 - **Enter a Prompt**
+
+  Next, enter the desired prompt and negative prompt for your video. You can use a detailed description or specific keywords to guide the video generation process.
+
+ - Step2 - **Upload Video**
+
+  Upload the video you wish to work with by dropping it onto the video canvas. Set the Resize mode to: "Crop and resize".
+
+  - Step3 - **Mov2mov Settings**
+
+    <img width="720" alt="Screenshot 2024-02-26 at 18 56 21" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/0cc1da94-1b33-437c-876b-0c8b8e93ad9b">
+
+
+    When using the Mov2mov extension, here are some key settings to consider:
+
+      - **Sampling method** : Keep in mind that deterministic samplers like Euler, LMS, and DPM++2M Karras might not work well with this extension, as they may not effectively reduce flickering.
+     - **Noise Multiplier** : Utilize the slider to adjust the noise multiplier. For smoother results and reduced flickering, keep it at 0.
+     - **CFG Scale** : Control the extent to which the prompt is followed by adjusting the CFG scale. In the provided video, a scale of 7 was used.
+     - **Denoising Strength** : Fine-tune the amount of change applied to the video by adjusting the denoising strength. A value of 0.6 was used in the example video.
+     - **Movie Frames** : The frames per second of your output. The higher this value, the smoother your video, but this will have to render more images.
+     - **Max Frame** : Determine the total number of frames to be generated. For initial testing, set it to a low number such as 10. To generate a full-length video, set it to -1.
+    - **Seed** : The seed determines the value for the first frame. All frames will use the same seed value, even if you set it to -1 for a random seed.
+
+</br>
+
+
+### 📍Generate videos with mov2mov extension
+
+With all the settings in place, it's time to generate the video. Click the "Generate" button to start the process. Be patient as it may take some time. Once the generation is complete, your new video will appear on the right side of the page.
+
+Click "Save" to download and save the video to your device. If you can't locate the video, check the output/mov2mov-videos folder.
+
+</br>
+
+  <p float="left">
+    <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/2a185687-ad20-4d08-98b0-d1ebfae41c53" height="620"/>
+    <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/e6a0b65e-5092-4cc1-af92-c7bcd6025217" height="620"/> 
+  </p>
+
+</br>
+
+🔗 Source : https://www.nextdiffusion.ai/tutorials/transforming-videos-into-stunning-ai-animations-with-stable-diffusion-mov2mov
+🔗 Original Videos : https://youtube.com/shorts/4cT2swoyNAY?si=B_OwxpMP-D2msK7I , https://youtube.com/shorts/2yZRp7wcqKk?si=FWDIucIFD7xG5cRG
 
 
 ## 9. Video Generation with Animatediff
