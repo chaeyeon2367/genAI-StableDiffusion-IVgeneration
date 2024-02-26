@@ -280,8 +280,92 @@ In this case, a prompt with a weight has a greater impact compared to a prompt w
 
 ## 5. ControlNet Variants
 
-  - Different types of ControlNet models and their applications
+</br>
 
+### 📌 What does ControlNet Do?
+
+</br>
+
+<img width="620" alt="Screenshot 2024-02-26 at 17 17 07" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/8867d11b-4180-429f-b61f-6b9cc688d8e3">
+
+</br>
+</br>
+
+ControlNet is introduced as a neural network structure designed to augment pretrained large diffusion models, such as Stable Diffusion, by incorporating additional input conditions. The primary purpose of ControlNet is to learn task-specific conditions in an end-to-end manner. Remarkably, the learning process remains robust even when the training dataset is limited, with effectiveness demonstrated even with datasets smaller than 50,000 samples.
+
+ControlNet offers the advantage of efficient training, comparable in speed to fine-tuning a diffusion model. Notably, this training can be performed on personal devices, making it accessible for a broader range of users. Alternatively, if powerful computation clusters are available, ControlNet has the capacity to scale to large datasets, ranging from millions to billions of data points.
+
+The integration of ControlNet with large diffusion models, exemplified by Stable Diffusion, enables the introduction of conditional inputs like edge maps, segmentation maps, keypoints, and more. This capability enriches the methods to control large diffusion models, opening avenues for enhanced control and customization in various applications related to image generation and manipulation.
+
+</br>
+
+
+### Different types of ControlNet models
+
+</br>
+
+- **ControlNet Interface**
+  
+  <img width="512" alt="Screenshot 2024-02-26 at 16 48 53" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/a2d253d9-0b4d-4cff-901c-9c7fcc7c06a2">
+
+</br>
+
+Combining ControlNet models allows for the generation of more customized images based on specific conditions. For instance, using f OpenPose extension in a original image, one can generate a new image with a pose matching that of the person in the original image. This showcases the capability of ControlNet models to leverage different input conditions for creating tailored and desired images.
+
+</br>
+
+- **Released Checkpoints**
+
+  The initial release of ControNet came with the following checkpoints. 
+
+    - [Canny edge](https://huggingface.co/lllyasviel/sd-controlnet-canny) : A monochrome image with white edges on a black background
+    - [Depth](https://huggingface.co/lllyasviel/sd-controlnet-depth) : A grayscale image with black representing deep areas and white representing shallow areas
+    - [Openpose](https://huggingface.co/lllyasviel/sd-controlnet-openpose) : A OpenPose bone image
+    - [Semantic Segmentation Map](https://huggingface.co/lllyasviel/sd-controlnet-seg): An ADE20K's segmentation protocol image
+    - [Lineart](https://huggingface.co/lllyasviel/ControlNet-v1-1/blob/main/control_v11p_sd15s2_lineart_anime.pth) : Lineart typically refers to the lines that outline the shapes and forms in an image, often used in illustrations or drawings
+    - [Softedge](https://huggingface.co/lllyasviel/ControlNet-v1-1/blob/main/control_v11p_sd15_softedge.pth) : Soft edges generally imply smooth transitions between different regions in an image, as opposed to sharp or well-defined edges
+ 
+
+  Typically, these six ControlNet models are commonly used in practical applications. You can download the checkpoint files for these models from [Hugging Face](https://huggingface.co/lllyasviel/ControlNet-v1-1).
+
+</br>
+
+  - **ReActor**
+  
+  
+    The ReActor Face Swapping Extension in Stable Diffusion is introduced as a robust tool intended to address the absence of Roop. This extension facilitates lifelike face swaps within the Stable Diffusion framework. The comprehensive guide provides instructions on downloading and using the ReActor extension, offering users the capability to achieve realistic face-swapping effects. Additional details and resources can be accessed on the official ReActor [GitHub page](https://github.com/Gourieff/sd-webui-reactor).
+
+      - High-Resolution Face Swaps with Upscaling
+      - Efficient CPU Performance
+      - Compatibility Across SDXL and 1.5 Models
+      - Automatic Gender and Age Detection
+      - No NSFW Filter (Uncensored)
+      - Continuous Development and Updates
+
+
+    In summary, the ReActor Extension stands out for high-resolution face swaps with advanced upscaling, optimized for CPU-only setups, offering versatility across SDXL and 1.5 models. It simplifies face-swapping with automatic gender and age detection, supports uncensored swaps, and excels in continuous development for evolving features and advancements in face-swapping technology.
+
+    
+</br>
+
+  <img width="720" alt="Screenshot 2024-02-26 at 17 42 19" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/ca4b373e-02b8-45d4-ae60-a797e627b283">
+
+</br>
+</br>
+
+  Here is a example of a face swap in Stable Diffusion using Margot Robbie’s face:
+
+</br>
+
+
+  ![Collage-8](https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/d576069f-5aa8-4b56-a73c-2695e4a7a28e)
+  
+</br>
+
+
+🔗 Source : https://ngwaifoong92.medium.com/introduction-to-controlnet-for-stable-diffusion-ea83e77f086e , https://www.nextdiffusion.ai/tutorials/how-to-face-swap-in-stable-diffusion-with-reactor-extension
+
+</br>
 </br>
 
 ## 6. Dreambooth LoRA Models Training
