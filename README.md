@@ -22,6 +22,7 @@ This repository showcases the results of an AI image and video generation projec
 7. [Video Generation with Deforum](#7-video-generation-with-deforum)
 8. [Animating Real-Person Videos with Move to Move](#8-animating-real-human-videos-with-move-to-move)
 9. [Video Generation with Animatediff](#9-video-generation-with-animatediff)
+10.[Conclusion](#10-Conclusion)
 
 </br> 
 
@@ -611,16 +612,103 @@ Click "Save" to download and save the video to your device. If you can't locate 
 🔗 Source : https://www.nextdiffusion.ai/tutorials/transforming-videos-into-stunning-ai-animations-with-stable-diffusion-mov2mov
 🔗 Original Videos : https://youtube.com/shorts/4cT2swoyNAY?si=B_OwxpMP-D2msK7I , https://youtube.com/shorts/2yZRp7wcqKk?si=FWDIucIFD7xG5cRG
 
+</br>
+
 
 ## 9. Video Generation with Animatediff
 
-  - Using Animatediff for generating dynamic and animated videos
+</br>
+
+Animatediff in Stable Diffusion refers to a extension that facilitates the creation of animated sequences or transformations between two images. It allows users to generate smooth transitions, morphing, or animations by specifying two keyframes or images. The system then intelligently interpolates between these images, producing a visually coherent and dynamic sequence.
+
+This extension is particularly useful for tasks such as transitioning between different poses, expressions, or styles in images. Animatediff enhances the creative possibilities within Stable Diffusion, enabling users to generate captivating and seamless animations with ease.
+
+</br>
+
+- **AnimateDiff Settings**
+  
+  Once you've installed the AnimateDiff extension, it will be available at the bottom of the Stable Diffusion interface. To use it, click on the "AnimatedDiff" option and the interface should fold out. Here are some settings you can configure, I will list the settings I recommend.
+
+  - **Motion module** : mm_sd_v15_v2.ckpt
+  - **Number of frames** : I recommend at least 8 frames for good quality, if you use a lower value the output won’t be as nice.
+Frames per second (FPS): Adjust the playback speed, I recommend at least 8 to 12.
+
+</br>
 
 
+  <img width="720" alt="Screenshot 2024-02-26 at 19 51 56" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/fbe4942e-fc25-41a4-8895-9971c4fa9faa">
+
+</br>
+
+ - **Troubleshooting**
+
+   If you experience a long generating time press "Remove motion module from any memory" before generating. It's also helpful to keep the negative prompt under 75 characters. Use max 16 number of frames.
+   
+</br>
+</br>
+
+ - **Using Animatediff for generating dynamic and animated videos**
 
 
+    <p float="left">
+      <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/68ade7d9-b6de-40ad-a055-c89b1e463e41" height="300"/>
+      <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/758284f9-ec20-4c86-9c6d-4b9010fa49b6" height="300"/> 
+      <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/64ef1cf3-0e63-45b2-b0f3-acabc6ad7827" height="300"/> 
+    </p>
 
 
+  
+   - Model : [ToonYou](https://civitai.com/models/30240/toonyou)
+   - Sampling method: DPM++ 2M Karras
+   - Steps: 40
+   - Resolution: 512x512
+   - CFG Scale: 8
+  
+   
+  
+    <p float="left">
+        <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/0f8b3555-d204-4379-afe5-097f412e242b" height="300"/>
+      <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/5c241a2b-249e-417e-b838-5919dad5fa64" height="300"/> 
+      <img src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/734ecd4e-a633-4800-995b-3fdda6f2df80" height="300"/> 
+    </p>
 
 
+   - Model : [Realistic Vision v6.0 B1](https://civitai.com/models/4201/realistic-vision-v20)
+   - Sampling method: DPM++ 2M Karras
+   - Steps: 30
+   - Resolution: 512x512
+   - CFG Scale: 7
 
+</br>
+</br>
+
+🔗 Source : https://github.com/guoyww/animatediff/?tab=readme-ov-file , https://www.nextdiffusion.ai/tutorials/how-to-make-gif-animations-with-stable-diffusion-animatediff
+
+</br>
+
+## 10. Conclusion
+
+</br>
+
+In conclusion, this project delved into the diverse capabilities offered by Stable Diffusion, showcasing its prowess in image and video generation. From the foundational aspects covered in the introduction to the advanced features explored in later sections, we've navigated through text-to-image synthesis, various image manipulations, and sophisticated video generation techniques.
+
+The utilization of ControlNet variants has provided insights into enhancing the guidance and control mechanisms for image creation, demonstrating the flexibility and adaptability of Stable Diffusion. Additionally, the training of Dreambooth and LoRA models has unveiled the intricacies of fine-tuning and personalizing image generation, pushing the boundaries of what can be achieved.
+
+The practical applications demonstrated through Deforum and Move to Move showcase how Stable Diffusion can be integrated into real-world scenarios, from video generation to animating real-person videos. The Animatediff feature adds an extra layer of creativity, allowing for smooth transitions and captivating animations.
+
+As technology advances, Stable Diffusion stands as a powerful tool in the realm of AI-driven image and video generation. This project serves as a comprehensive guide, and the outlined procedures, models, and techniques open avenues for exploration and innovation. The rich functionalities offered by Stable Diffusion, combined with ControlNet variants and other extensions, contribute to a dynamic and evolving landscape in the field of AI-generated content.
+
+Whether you are an AI enthusiast, researcher, or practitioner, the journey through Stable Diffusion presented here invites you to explore, experiment, and leverage these tools to create compelling and realistic visual content.
+
+Thank you for Reading this exploration of Stable Diffusion and its applications. The possibilities are vast, and we look forward to witnessing the continued advancements and creative endeavors in the exciting field of AI image and video generation.
+
+</br>
+
+
+## Contact
+
+chaeyeon2367@gamil.com
+
+
+</br>
+</br>
