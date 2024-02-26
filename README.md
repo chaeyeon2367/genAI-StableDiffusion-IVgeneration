@@ -633,10 +633,9 @@ This extension is particularly useful for tasks such as transitioning between di
   - **Number of frames** : I recommend at least 8 frames for good quality, if you use a lower value the output won’t be as nice.
 Frames per second (FPS): Adjust the playback speed, I recommend at least 8 to 12.
 
-</br>
 
 
-  <img width="720" alt="Screenshot 2024-02-26 at 19 51 56" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/fbe4942e-fc25-41a4-8895-9971c4fa9faa">
+    <img width="720" alt="Screenshot 2024-02-26 at 19 51 56" src="https://github.com/chaeyeon2367/genAI-StableDiffusion-IVgeneration/assets/63314860/fbe4942e-fc25-41a4-8895-9971c4fa9faa">
 
 </br>
 
@@ -706,8 +705,7 @@ Thank you for Reading this exploration of Stable Diffusion and its applications.
 
 
 ## Contact
-
-chaeyeon2367@gamil.com
+  - chaeyeon2367@gamil.com
 
 
 </br>
